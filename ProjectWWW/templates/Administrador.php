@@ -1,4 +1,4 @@
-<?php include('seguridad.php')?>
+<?php include('seguridad.php') ?>
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -28,7 +28,6 @@
                                 <!-- Nav -->
                                 <nav id="nav">
                                     <ul>
-                                        <li><a href="empresa.php">Gestión de Restaurante</a></li>
                                         <li><a href="cerrarSesion.php">Cerrar Sesión</a></li>                                        
                                     </ul>
                                 </nav>
@@ -39,6 +38,47 @@
                             <h2><strong>Administrador</strong> 
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+        <!-- Main Wrapper -->
+        <div id="main-wrapper">
+            <div class="main-wrapper-style1">
+                <div class="inner">
+
+                    <!-- Feature 1 -->
+                    <section class="container box-feature1">                        
+                        <div class="row">
+                            <div class="12u">
+                                <header class="first major">
+                                    <h2>Administrador</h2>
+                                    <span class="byline">Bienvenido, selecciona lo que quieres hacer</span>
+                                </header>
+                            </div>
+                        </div>
+                        <center>
+                        <div class="row">
+                            <div class="4u offset2">
+                                <section>
+                                    <span class="image image-full"><a href="empresa.php"><img src="../images/pic02.jpg" HEIGHT=235 WIDTH=300 alt=""></a></span>
+                                    <header class="second fa fa-bar-chart-o">
+                                        <h3>Empresa</h3>
+                                        <span class="byline">Manejo de Empresas</span>
+                                    </header>
+                                </section>
+                            </div>
+                            <div class="4u offset2" >
+                                <section>
+                                    <span class="image image-full"> <a href="usuario.php"><img src="../images/pic01.jpg" HEIGHT=235 WIDTH=300 alt=""></a></span>
+                                    <header class="second fa fa-bar-chart-o">
+                                        <h3>Usuarios</h3>
+                                        <span class="byline">Manejo de Usuarios</span>
+                                    </header>
+                                </section>
+                            </div>
+                        </div>
+                        </center>
+                    </section>                    
                 </div>
             </div>
         </div>

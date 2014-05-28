@@ -26,11 +26,12 @@
 
                                 <!-- Nav -->
                                 <nav id="nav">
-                                    <ul>
-                                        <li><a href="usuarios.html">Usuarios</a></li>
-                                        <li><a href="pedidos.html">Pedidos</a></li>
-                                        <li><a href="reportes.html">Reportes</a></li>
-
+                                    <ul> 
+                                        <li><a href="TemplateUsuarios.php">Gestión Usuarios</a></li>
+                                        <li><a href="plato.php">Gestión Platos </a></li>
+                                        <li><a href="pedidos.php">Pedidos </a></li>
+                                        <li><a href="reportes.php">Reportes</a></li>
+                                        <li><a href="cerrarSesion.php">Cerrar Sesión</a></li>
                                     </ul>
                                 </nav>
 

@@ -1,4 +1,4 @@
-<?php include('seguridad.php')?>
+<?php include('seguridad.php') ?>
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -60,40 +60,40 @@
                                 </header>
                             </div>
                         </div>
-                    </section>
-                </div>       
-            </div>
-        </div>
-        <!--Div para crear empresa-->
-        <div class="container login">
-            <div class="row-fluid">                
-                <div data-role="content">                    
-                    <section data-role="content">                  
-                        <div id="empresa" >
-                            <!-- Boton para crear registro empresa-->
-                            <form action="crearEmpresa.php" method="post"  data-ajax="false" onSubmit="return validarCampos();" >    
-                                <div class="form-group"> 
-                                    <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre"/>
-                                </div>
-                                <div class="form-group">                        
-                                    <input type="file" class="form-control" name="logo" id="logo" placeholder="Logo" multiple></input>
-                                </div>
-                                <div class="form-group"> 
-                                    <input type="url" id="url" class="form-control" name="url" placeholder="URL"/>
-                                </div>
-                                <div class="form-group"> 
-                                    <input type="tel" id="tel" name="tel" class="form-control" placeholder="Telefono"></input>
-                                </div>
-                                <div class="form-group"> 
-                                    <input type="text"  id="direccion" name="direccion" class="form-control" placeholder="Direccion"/>
-                                </div>
-                                <button type="submit" name="submit" class="btn btn-primary btn-block span12">Crear Empresa</button>
-                            </form>
-                            <a class="btn btn-primary span12" type="button" href="Administrador.php">Home</a>
 
+                        <!--Div para crear empresa-->
+                        <div class="container login">
+                            <div class="row-fluid">                
+                                <div data-role="content">                    
+                                    <section data-role="content">                  
+                                        <div id="empresa" >
+                                            <!-- Boton para crear registro empresa-->
+                                            <form action="crearEmpresa.php" method="post"  data-ajax="false" onSubmit="return validarCampos();" >    
+                                                <div class="form-group"> 
+                                                    <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre"/>
+                                                </div>
+                                                <div class="form-group">                        
+                                                    <input type="file" class="form-control" name="logo" id="logo" placeholder="Logo" multiple></input>
+                                                </div>
+                                                <div class="form-group"> 
+                                                    <input type="url" id="url" class="form-control" name="url" placeholder="URL"/>
+                                                </div>
+                                                <div class="form-group"> 
+                                                    <input type="tel" id="tel" name="tel" class="form-control" placeholder="Telefono"></input>
+                                                </div>
+                                                <div class="form-group"> 
+                                                    <input type="text"  id="direccion" name="direccion" class="form-control" placeholder="Direccion"/>
+                                                </div>
+                                                <button type="submit" name="submit" class="btn btn-primary btn-block span12">Crear Empresa</button>
+                                            </form>
+                                            <a class="btn btn-primary span12" type="button" onclick="history.back()">Atras</a>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
                         </div>
                     </section>
-                </div>
+                </div>       
             </div>
         </div>
         <?php

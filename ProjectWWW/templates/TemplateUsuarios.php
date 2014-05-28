@@ -28,6 +28,7 @@
                                         <li><a href="plato.php">Gestión Platos</a></li>
                                         <li><a href="pedidos.php">Pedidos</a></li>                                       
                                         <li><a href="reportes.php">Reportes</a></li>
+                                        <li><a href="cerrarSesion.php">Cerrar Sesión</a></li>  
                                     </ul>
                                 </nav>
                             </div>
@@ -61,11 +62,11 @@
                                 <center>                                       
                                     <a href="usuario.php"><img src="../images/pic01.jpg" alt=""></a>
                                 </center>
-                                    <header class="second fa fa-user">
-                                        <h3>Usuarios</h3>
-                                        <span class="byline">Manejo de Usuarios</span>
-                                    </header>
-                                </section>
+                                <header class="second fa fa-user">
+                                    <h3>Usuarios</h3>
+                                    <span class="byline">Manejo de Usuarios</span>
+                                </header>
+                            </section>
                         </div>                        
                     </section>
                 </div>

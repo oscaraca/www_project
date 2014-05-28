@@ -31,10 +31,11 @@
                                 <!-- Nav -->
                                 <nav id="nav">
                                     <ul>
-                                        <li><a href="usuarios.html">Gestión Usuarios</a></li>
+                                        <li><a href="TemplateUsuarios.php">Gestión Usuarios</a></li>
                                         <li><a href="plato.php">Gestión Platos </a></li>
-                                        <li><a href="pedidos.html">Pedidos </a></li>
-                                        <li><a href="">Reportes</a></li>
+                                        <li><a href="pedidos.php">Pedidos </a></li>
+                                        <li><a href="reportes.php">Reportes</a></li>
+                                        <li><a href="cerrarSesion.php">Cerrar Sesión</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -65,51 +66,48 @@
 
                                 </header>
                             </div>
+                        </div>                 
+
+                        <!--Div para crear usuario-->
+                        <div class="container login">
+                            <div class="row-fluid">                                
+                                <div data-role="content">                                  
+                                    <div id="plato" >
+                                        <!-- Boton para crear registro usuario-->  
+                                        <form role="form"  action="crearPlato.php" method="post"  data-ajax="false" onSubmit="return validarCampos();">
+                                            <div class="form-group">      
+                                                <div class="form-group">                                
+                                                    <input type="text" class="form-control" id="nombrePlato" name="nombrePlato" placeholder="nombre del Plato">
+                                                </div>
+                                                <div class="form-group">                            
+                                                    <input type="number" id="codigoPlato" class="form-control" name="codigoPlato" placeholder="codigo del Plato"/>
+                                                </div>
+                                                <div class="form-group">                                
+                                                    <input type="text" id="ingredientes" class="form-control" name="ingredientesPlato"  placeholder="Ingredientes"/>
+                                                </div>
+                                                <div class="form-group">                                
+                                                    <input type="date" id="fechaCreacion" class="form-control" name="fechaCreacionPlato"  placeholder="fecha Creacion plato"/>
+                                                </div>
+                                                <div class="form-group">                           
+                                                    <input type="file"  name="fotoPlato" id="fotoPlato" class="form-control" placeholder="foto del Plato" multiple>
+                                                </div>
+                                                <div class="form-group">         
+                                                    Estado 
+                                                    <select name="estado">
+                                                        <option value="Disponible">Disponible</option>
+                                                        <option value="No disponible">No Disponible</option>
+                                                    </select>    
+                                                </div>
+                                                <button type="submit" name="submit" class="btn btn-primary span12" >Crear Plato</button>
+                                            </div>
+                                        </form>
+                                        <a class="btn btn-primary span12" type="button" onclick="history.back()">Atras</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </section>
                 </div>       
-            </div>
-        </div>
-
-        <!--Div para crear usuario-->
-        <div class="container login">
-            <div class="row-fluid">
-                <div class="span12">  
-                    <center><legend> Crear Plato </legend></center>
-                </div>
-                <div data-role="content">                                  
-                    <div id="plato" >
-                        <!-- Boton para crear registro usuario-->  
-                        <form role="form"  action="crearPlato.php" method="post"  data-ajax="false" onSubmit="return validarCampos();">
-                            <div class="form-group">      
-                                <div class="form-group">                                
-                                    <input type="text" class="form-control" id="nombrePlato" name="nombrePlato" placeholder="nombre del Plato">
-                                </div>
-                                <div class="form-group">                            
-                                    <input type="number" id="codigoPlato" class="form-control" name="codigoPlato" placeholder="codigo del Plato"/>
-                                </div>
-                                <div class="form-group">                                
-                                    <input type="text" id="ingredientes" class="form-control" name="ingredientesPlato"  placeholder="Ingredientes"/>
-                                </div>
-                                <div class="form-group">                                
-                                    <input type="date" id="fechaCreacion" class="form-control" name="fechaCreacionPlato"  placeholder="fecha Creacion plato"/>
-                                </div>
-                                <div class="form-group">                           
-                                    <input type="file"  name="fotoPlato" id="fotoPlato" class="form-control" placeholder="foto del Plato" multiple>
-                                </div>
-                                <div class="form-group">         
-                                    Estado 
-                                    <select name="estado">
-                                        <option value="Disponible">Disponible</option>
-                                        <option value="No disponible">No Disponible</option>
-                                    </select>    
-                                </div>
-                            </div>
-                        </form>
-                        <button type="submit" name="submit" class="btn btn-primary span12" >Crear Plato</button>
-                        <a class="btn btn-primary span12" type="button" href="TemplateUsuarios.php">Atras</a>
-                    </div>
-                </div>
             </div>
         </div>
         <?php

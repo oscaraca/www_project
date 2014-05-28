@@ -22,7 +22,7 @@ if ($nombre != " " &&
     pg_query($dbconn, $result);
     pg_close($dbconn);
 
-    header('Location: usuario.php');
+    header('Location: empresa.php');
 } else {
     echo "<script language='JavaScript'>
 alert('Error de Creación');</script>";

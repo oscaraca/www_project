@@ -1,3 +1,4 @@
+<?php include('seguridad.php') ?>
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -17,17 +18,15 @@
                     <div class="12u">
                         <!-- Header -->
                         <header id="header">
-                            <div class="inner">
-                                <!-- Logo -->
-                                <h1><a href="#" id="logo">PLATOS</a></h1>
-
+                            <div class="inner">                                
                                 <!-- Nav -->
                                 <nav id="nav">
                                     <ul>
                                         <li><a href="TemplateUsuarios.php">Gestion Usuarios</a></li>
-                                        <li><a href="TemplateUsuarios.php">Gestion Platos</a></li>
+                                        <li><a href="plato.php">Gestion Platos</a></li>
                                         <li><a href="pedidos.php">Pedidos</a></li>
-                                        <li><a href="reportes.PHP">Reportes</a></li>
+                                        <li><a href="reportes.php">Reportes</a></li>
+                                        <li><a href="cerrarSesion.php">Cerrar Sesión</a></li> 
                                     </ul>
                                 </nav>
                             </div>

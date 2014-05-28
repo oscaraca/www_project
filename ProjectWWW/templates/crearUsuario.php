@@ -9,8 +9,9 @@ $telefono = $_POST['tel'];
 $identificacion = $_POST['ide'];
 $tipo_usuario = $_POST['tipo_usuario'];
 $tid = trim($_POST['tid']);
-print_r($tid);
-$primer = $tid{0};
+$arraytid = explode(" ",$tid);
+print_r($arraytid);
+$primer = $arraytid{0};
 if ($usuario != " " &&
         $nombre != " " &&
         $apellido != " " &&
