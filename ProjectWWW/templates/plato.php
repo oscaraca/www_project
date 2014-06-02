@@ -1,4 +1,4 @@
-<?php include('seguridad.php') ?>
+<?php include('../serverPages/seguridad.php') ?>
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -35,7 +35,7 @@
                                         <li><a href="plato.php">Gestión Platos </a></li>
                                         <li><a href="pedidos.php">Pedidos </a></li>
                                         <li><a href="reportes.php">Reportes</a></li>
-                                        <li><a href="cerrarSesion.php">Cerrar Sesión</a></li>
+                                        <li><a href="../serverPages/cerrarSesion.php">Cerrar Sesión</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -74,29 +74,28 @@
                                 <div data-role="content">                                  
                                     <div id="plato" >
                                         <!-- Boton para crear registro usuario-->  
-                                        <form role="form"  action="crearPlato.php" method="post"  data-ajax="false" onSubmit="return validarCampos();">
+                                        <form role="form"  action="../controlador/crearPlato.php" method="post"  data-ajax="false" onSubmit="return validarCampos();">
                                             <div class="form-group">      
                                                 <div class="form-group">                                
-                                                    <input type="text" class="form-control" id="nombrePlato" name="nombrePlato" placeholder="nombre del Plato">
-                                                </div>
-                                                <div class="form-group">                            
-                                                    <input type="number" id="codigoPlato" class="form-control" name="codigoPlato" placeholder="codigo del Plato"/>
+                                                    <input type="text" class="form-control" id="nombrePlato" name="nombre" placeholder="nombre del Plato">
+                                                </div>                                                
+                                                <div class="form-group">                                
+                                                    <input type="text" id="ingredientes" class="form-control" name="ingredientes"  placeholder="Ingredientes"/>
                                                 </div>
                                                 <div class="form-group">                                
-                                                    <input type="text" id="ingredientes" class="form-control" name="ingredientesPlato"  placeholder="Ingredientes"/>
-                                                </div>
-                                                <div class="form-group">                                
-                                                    <input type="date" id="fechaCreacion" class="form-control" name="fechaCreacionPlato"  placeholder="fecha Creacion plato"/>
+                                                    <input type="date" id="fechaCreacion" class="form-control" name="fechaCreacion"  placeholder="fecha Creacion plato"/>
                                                 </div>
                                                 <div class="form-group">                           
-                                                    <input type="file"  name="fotoPlato" id="fotoPlato" class="form-control" placeholder="foto del Plato" multiple>
+                                                    <input type="file"  name="foto" id="fotoPlato" class="form-control" placeholder="foto del Plato" multiple>
                                                 </div>
-                                                <div class="form-group">         
-                                                    Estado 
-                                                    <select name="estado">
+                                                <div class="form-group"> 
+                                                    <select name="estado" class="form-control">
                                                         <option value="Disponible">Disponible</option>
                                                         <option value="No disponible">No Disponible</option>
                                                     </select>    
+                                                </div>
+                                                <div class="form-group">                           
+                                                    <input type="number"  name="costo" id="costo" class="form-control" placeholder="Valor">
                                                 </div>
                                                 <button type="submit" name="submit" class="btn btn-primary span12" >Crear Plato</button>
                                             </div>
@@ -106,17 +105,18 @@
                                 </div>
                             </div>
                         </div>
+
+                        <?php
+                        if ($_GET['creacion'] == "si") {
+                            echo '<h3><span style="color:#CC0000"><b>Datos Creados Correctamente</b></span></h3>';
+                        } else {
+                            echo $_GET['creacion'];
+                        }
+                        ?>
                     </section>
                 </div>       
             </div>
         </div>
-        <?php
-        if ($_GET['creacion'] == "si") {
-            echo '<h3><span style="color:#CC0000"><b>Datos Creados Correctamente</b></span></h3>';
-        } else {
-            echo $_GET['creacion'];
-        }
-        ?>
         <script language="javascript">
             /*
              *	Funcion en javascript para validar los campos antes que se envien y los procese el PHP

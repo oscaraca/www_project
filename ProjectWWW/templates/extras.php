@@ -1,4 +1,4 @@
-<?php include('seguridad.php') ?>
+<?php include('../serverPages/seguridad.php') ?>
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -31,13 +31,12 @@
                                 <h1><a href="#" id="logo">Restaurant Application</a></h1>
                                 <!-- Nav -->
                                 <nav id="nav">
-                                    <ul>
-                                        <li class="current_page_item"><a href="index.html">Home</a></li>
+                                    <ul>                                        
                                         <li><a href="TemplateUsuarios.php">Gestión Usuarios</a></li>
                                         <li><a href="plato.php">Gestión Platos</a></li>
                                         <li><a href="pedidos.php">Pedidos</a></li>
                                         <li><a href="reportes.php">Reportes</a></li>
-                                        <li><a href="cerrarSesion.php">Cerrar Sesión</a></li> 
+                                        <li><a href="../serverPages/cerrarSesion.php">Cerrar Sesión</a></li> 
                                     </ul>
                                 </nav>
                             </div>
@@ -69,45 +68,45 @@
                                     </select>
                                 </header>
                             </div>
+                        </div>                   
+
+                        <!--Div para crear usuario-->        
+                        <div class="row-fluid">
+                            <div class="span12">  
+                                <center><legend> Añadir Extra a un plato </legend></center>
+                            </div>
+                            <div data-role="content">                                  
+                                <div id="plato" >
+                                    <!-- Boton para crear registro usuario-->      
+                                    <form role="form"  action="../controlador/crearAdicion.php" method="post"  data-ajax="false" onSubmit="return validarCampos();" >      
+                                        <div class="form-group">                                
+                                            <input type="text" class="form-control" id="nombreAdicion" name="nombreAdicion" placeholder="nombre de la adicion"><br>
+                                        </div>
+                                        <div class="form-group">                           
+                                            <input type="file"  name="fotoAdicion" id="fotoAdicion" class="form-control" placeholder="foto de la Adicion" multiple></input>
+                                        </div>
+                                        <div class="form-group">   
+                                            <input type="date" class="form-control" id="fechaAdicion" name="fechaAdicion" placeholder="Fecha de la Adicion">Por defecto dia de Hoy<br>
+                                        </div>  
+                                    </form>
+                                    <div class="form-group"> 
+                                        <button type="submit" name="submit" class="btn btn-primary span12" >Crear Extra en el Plato</button>
+                                        <a class="btn btn-primary span4" type="button" href="pedidos.html">Atras</a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        <?php
+                        if ($_GET['creacion'] == "si") {
+                            echo '<h3><span style="color:#CC0000"><b>Datos Creados Correctamente</b></span></h3>';
+                        } else {
+                            echo $_GET['creacion'];
+                        }
+                        ?>
                     </section>
                 </div>       
             </div>
         </div>
-
-        <!--Div para crear usuario-->        
-        <div class="row-fluid">
-            <div class="span12">  
-                <center><legend> Añadir Extra a un plato </legend></center>
-            </div>
-            <div data-role="content">                                  
-                <div id="plato" >
-                    <!-- Boton para crear registro usuario-->      
-                    <form role="form"  action="crearAdicion.php" method="post"  data-ajax="false" onSubmit="return validarCampos();" >      
-                            <div class="form-group">                                
-                                <input type="text" class="form-control" id="nombreAdicion" name="nombreAdicion" placeholder="nombre de la adicion"><br>
-                            </div>
-                            <div class="form-group">                           
-                                <input type="file"  name="fotoAdicion" id="fotoAdicion" class="form-control" placeholder="foto de la Adicion" multiple></input>
-                            </div>
-                            <div class="form-group">   
-                                <input type="date" class="form-control" id="fechaAdicion" name="fechaAdicion" placeholder="Fecha de la Adicion">Por defecto dia de Hoy<br>
-                            </div>  
-                    </form>
-                    <div class="form-group"> 
-                        <button type="submit" name="submit" class="btn btn-primary span12" >Crear Extra en el Plato</button>
-                        <a class="btn btn-primary span4" type="button" href="pedidos.html">Atras</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <?php
-        if ($_GET['creacion'] == "si") {
-            echo '<h3><span style="color:#CC0000"><b>Datos Creados Correctamente</b></span></h3>';
-        } else {
-            echo $_GET['creacion'];
-        }
-        ?>
         <script language="javascript">
             /*
              *	Funcion en javascript para validar los campos antes que se envien y los procese el PHP

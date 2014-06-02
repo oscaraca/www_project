@@ -1,4 +1,4 @@
-<?php include('seguridad.php') ?>
+<?php include('../serverPages/seguridad.php') ?>
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -28,7 +28,7 @@
                                 <!-- Nav -->
                                 <nav id="nav">
                                     <ul>
-                                        <li><a href="cerrarSesion.php">Cerrar Sesión</a></li>                                        
+                                        <li><a href="../serverPages/cerrarSesion.php">Cerrar Sesión</a></li>                                        
                                     </ul>
                                 </nav>
                             </div>
@@ -60,7 +60,7 @@
                         <div class="row">
                             <div class="4u offset2">
                                 <section>
-                                    <span class="image image-full"><a href="empresa.php"><img src="../images/pic02.jpg" HEIGHT=235 WIDTH=300 alt=""></a></span>
+                                    <span class="image image-full"><a href="../templates/empresa.php"><img src="../images/pic02.jpg" HEIGHT=235 WIDTH=300 alt=""></a></span>
                                     <header class="second fa fa-bar-chart-o">
                                         <h3>Empresa</h3>
                                         <span class="byline">Manejo de Empresas</span>
@@ -69,7 +69,7 @@
                             </div>
                             <div class="4u offset2" >
                                 <section>
-                                    <span class="image image-full"> <a href="usuario.php"><img src="../images/pic01.jpg" HEIGHT=235 WIDTH=300 alt=""></a></span>
+                                    <span class="image image-full"> <a href="../templates/usuario.php"><img src="../images/pic01.jpg" HEIGHT=235 WIDTH=300 alt=""></a></span>
                                     <header class="second fa fa-bar-chart-o">
                                         <h3>Usuarios</h3>
                                         <span class="byline">Manejo de Usuarios</span>

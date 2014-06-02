@@ -1,4 +1,4 @@
-<?php include('seguridad.php') ?>
+<?php include('../serverPages/seguridad.php') ?>
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -68,12 +68,12 @@
                                     <section data-role="content">                  
                                         <div id="empresa" >
                                             <!-- Boton para crear registro empresa-->
-                                            <form action="crearEmpresa.php" method="post"  data-ajax="false" onSubmit="return validarCampos();" >    
+                                            <form action="../controlador/crearEmpresa.php" method="post"  data-ajax="false" onSubmit="return validarCampos();" >    
                                                 <div class="form-group"> 
                                                     <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre"/>
                                                 </div>
-                                                <div class="form-group">                        
-                                                    <input type="file" class="form-control" name="logo" id="logo" placeholder="Logo" multiple></input>
+                                                <div class="form-group" >
+                                                    <input type="file" name="logo" id="logo" multiple></input>
                                                 </div>
                                                 <div class="form-group"> 
                                                     <input type="url" id="url" class="form-control" name="url" placeholder="URL"/>
@@ -92,20 +92,21 @@
                                 </div>
                             </div>
                         </div>
-                    </section>
-                </div>       
-            </div>
-        </div>
-        <?php
-        if ($_GET['creacion'] == "si") {
-            echo '<div class="row-fluid">                
+
+                        <?php
+                        if ($_GET['var'] == "si") {
+                            echo '<div class="row-fluid">                
                     <center><div data-role="content">  
                         <h3><span style="color:#FFFFFF"><b>Datos Creados Correctamente</b></span></h3>
                         <a class="btn btn-primary span12" type="button" href="usuario.php">Crear Usuarios</a>
                     </div></center>
                  </div>';
-        }
-        ?>
+                        }
+                        ?>
+                    </section>
+                </div>       
+            </div>
+        </div>
         <script language="javascript">
             /*
              *	Funcion en javascript para validar los campos antes que se envien y los procese el PHP

@@ -1,4 +1,4 @@
-<?php include('seguridad.php') ?>
+<?php include('../serverPages/seguridad.php') ?>
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -26,7 +26,7 @@
                                         <li><a href="plato.php">Gestion Platos</a></li>
                                         <li><a href="pedidos.php">Pedidos</a></li>
                                         <li><a href="reportes.php">Reportes</a></li>
-                                        <li><a href="cerrarSesion.php">Cerrar Sesión</a></li> 
+                                        <li><a href="../serverPages/cerrarSesion.php">Cerrar Sesión</a></li> 
                                     </ul>
                                 </nav>
                             </div>

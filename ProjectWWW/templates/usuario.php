@@ -1,6 +1,6 @@
 <?php
-include_once('listaEmpresas.php');
-include_once('seguridad.php');
+include_once('../serverPages/listaEmpresas.php');
+include_once('../serverPages/seguridad.php');
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -68,7 +68,7 @@ include_once('seguridad.php');
                                 <div data-role="content">                                  
                                     <div id="usuario" >
                                         <!-- Boton para crear registro usuario-->             
-                                        <form role="form" action="crearUsuario.php" method="post"  data-ajax="false" onSubmit="return validarCampos();" >
+                                        <form role="form" action="../controlador/crearUsuario.php" method="post"  data-ajax="false" onSubmit="return validarCampos();" >
                                             <div class="form-group">                                
                                                 <input type="text" class="form-control" id="username" name="username" placeholder="Username"></input>
                                             </div>
@@ -114,19 +114,20 @@ include_once('seguridad.php');
                                 </div>
                             </div>
                         </div>
-                    </section>
-                </div>       
-            </div>
-        </div>
-        <?php
-        if ($_GET['creacion'] == "si") {
-            echo '<div class="row-fluid">                
+
+                        <?php
+                        if ($_GET['creacion'] == "si") {
+                            echo '<div class="row-fluid">                
                     <center><div data-role="content">  
                         <h3><span style="color:#FFFFFF"><b>Datos Creados Correctamente</b></span></h3>                      
                     </div></center>
                  </div>';
-        }
-        ?>
+                        }
+                        ?>
+                    </section>
+                </div>       
+            </div>
+        </div>
         <script language="javascript">
             /*
              *	Funcion en javascript para validar los campos antes que se envien y los procese el PHP
