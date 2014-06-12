@@ -9,4 +9,3 @@ function getDB() {
 function closeDB($dbconn) {
     pg_close($dbconn);
 }
-?>

@@ -1,5 +1,5 @@
 <?php
-include_once('../../serverPages/listaEmpresas.php');
+include_once('../../serverPages/listaAtributos.php');
 include_once('../../serverPages/seguridad.php');
 ?>
 <!DOCTYPE HTML>
@@ -65,7 +65,7 @@ include_once('../../serverPages/seguridad.php');
                                         <!-- Boton para crear registro usuario-->             
                                         <form role="form" action="../../controlador/Administrador/crearUsuarioAdministrador.php" method="post"  data-ajax="false" onSubmit="return validarCampos();" >
                                             <div class="form-group">                                
-                                                <input type="text" class="form-control" id="username" name="username" placeholder="Username"></input>
+                                                <input type="text" class="form-control" id="username" name="username" placeholder="Username"/>
                                             </div>
                                             <div class="form-group">                                
                                                 <input type="password" id="pass" name="pass" class="form-control" placeholder="Contraseña"/>
@@ -80,10 +80,10 @@ include_once('../../serverPages/seguridad.php');
                                                 <input type="text" id="ide" name="ide" class="form-control" placeholder="Numero de Id"/>
                                             </div>
                                             <div class="form-group">                                
-                                                <input type="email" id="email" name="email" class="form-control" placeholder="Correo Electronico"></input>
+                                                <input type="email" id="email" name="email" class="form-control" placeholder="Correo Electronico"/>
                                             </div>
                                             <div class="form-group">                                
-                                                <input type="text" id="tel" name="tel" class="form-control" placeholder="Telefono"></input>
+                                                <input type="text" id="tel" name="tel" class="form-control" placeholder="Telefono"/>
                                             </div>
                                             <div class="form-group">                                
                                                 <input type="text"  id="direccion" name="direccion" class="form-control" placeholder="Direccion"/>
@@ -97,10 +97,12 @@ include_once('../../serverPages/seguridad.php');
                                             <div class="form-group">
                                                 <h3><span style="color:#3366FF ">Empresa</span></h3>                                
                                                 <select name="tid" class="form-control">
-                                                    <?php consultaEmpresas(); ?>
+                                                    <?php consultaEmpresas() ?>
                                                 </select>
                                             </div>
-                                            <button type="submit" name="submit" class="btn btn-primary btn-block span12">Crear Usuario</button>
+                                            <div class="form-group">
+                                                <button type="submit" name="submit" class="btn btn-primary btn-block span12">Crear Usuario</button>
+                                            </div>
                                         </form>
                                     </div>
                                 </div>

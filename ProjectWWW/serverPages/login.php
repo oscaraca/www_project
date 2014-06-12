@@ -23,7 +23,7 @@ if (isset($_POST['user']) && isset($_POST['pass'])) {
         switch ($tipo) {
             case 'Administrador': header('Location: ../templates/Administrador/Administrador.php');
                 break;
-            case 'administrador': header('Location: ../templates/admin.php');
+            case 'administrador': header('Location: ../templates/Admin/admin.php');
                 break;
             case 'admin': header('Location: .html');
                 break;

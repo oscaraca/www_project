@@ -67,13 +67,13 @@
                                                     <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre"/>
                                                 </div>
                                                 <div class="form-group" >
-                                                    <input type="file" name="logo" id="logo" multiple></input>
+                                                    <input type="file" name="logo" id="logo" multiple/>
                                                 </div>
                                                 <div class="form-group"> 
                                                     <input type="url" id="url" class="form-control" name="url" placeholder="URL"/>
                                                 </div>
                                                 <div class="form-group"> 
-                                                    <input type="tel" id="tel" name="tel" class="form-control" placeholder="Telefono"></input>
+                                                    <input type="tel" id="tel" name="tel" class="form-control" placeholder="Telefono"/>
                                                 </div>
                                                 <div class="form-group"> 
                                                     <input type="text"  id="direccion" name="direccion" class="form-control" placeholder="Direccion"/>

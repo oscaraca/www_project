@@ -26,8 +26,8 @@ if ($usuario != " " &&
 
     include_once '../../serverPages/ConexionDB.php';  
     $db = getDB();
-    $result = "INSERT INTO usuario (usuario_id, tid, nombre, apellido, direccion, telefono, tipo_usuario,password, email, identificacion ) VALUES ('" . $usuario . "', '" . $primer . "','" . $nombre . "', '" . $apellido . "' , '" . $direccion . "', '" . $telefono . "', '" . $tipo_usuario . "', '" . $password . "' , '" . $correo . "' , '" . $identificacion . "')";
-    pg_query($db, $result);
+    $query = "INSERT INTO usuario (usuario_id, tid, nombre, apellido, direccion, telefono, tipo_usuario,password, email, identificacion ) VALUES ('" . $usuario . "', '" . $primer . "','" . $nombre . "', '" . $apellido . "' , '" . $direccion . "', '" . $telefono . "', '" . $tipo_usuario . "', '" . $password . "' , '" . $correo . "' , '" . $identificacion . "')";
+    $result = pg_query($db, $query );
     closeDB($db);    
     header('Location: ../../templates/Administrador/crearUsuarioTemplateAdministrador.php?creacion=si');
  
