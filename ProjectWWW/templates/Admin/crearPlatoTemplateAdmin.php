@@ -32,8 +32,7 @@
                                 <nav id="nav">
                                     <ul>
                                         <li><a href="admin.php">Home</a></li>
-                                        <li><a href="platoAdmin.php">Gestión PLatos</a></li>
-                                        <li><a href="../../serverPages/cerrarSesion.php">Cerrar Sesión</a></li>
+                                        <li><a href="platoAdmin.php">Gestión PLatos</a></li>                                        
                                     </ul>
                                 </nav>
                             </div>

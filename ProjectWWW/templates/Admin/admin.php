@@ -29,7 +29,7 @@
                                 <!-- Nav -->
                                 <nav id="nav">
                                     <ul>
-                                        <li><a href="TemplateUsuariosAdmin.php">Gestion Usuarios</a></li> 
+                                        <li><a href="usuariosAdmin.php">Gestion Usuarios</a></li> 
                                         <li><a href="platoAdmin.php">Gestion PLatos</a></li> 
                                         <li><a href="extrasAdmin.php">Gestion Extras</a></li>
                                         <li><a href="pedidosAdmin.php">Pedidos</a></li> 

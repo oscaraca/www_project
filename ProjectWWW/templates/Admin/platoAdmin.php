@@ -58,7 +58,7 @@
                             <div class="4u">                            
                                 <section>
                                     <center>                                       
-                                        <a href="crearPlatoTemplateAdmin.php"><img src="../../images/pic01.jpg" HEIGHT=235 WIDTH=300 alt=""></a>
+                                        <a href="crearPlatoTemplateAdmin.php"><img src="../../images/1.jpg" HEIGHT=235 WIDTH=300 alt=""></a>
                                     </center>
                                     <header class="second fa fa-user">
                                         <h3>Platos</h3>
@@ -69,7 +69,7 @@
                             <div class="4u">                            
                                 <section>
                                     <center>                                       
-                                        <a href="editarPlatoTemplateAdmin.php"><img src="../../images/edit_male_user_98373.jpg" HEIGHT=235 WIDTH=300 alt=""></a>
+                                        <a href="editarPlatoTemplateAdmin.php"><img src="../../images/editEmpresa.jpg" HEIGHT=235 WIDTH=300 alt=""></a>
                                     </center>
                                     <header class="second fa fa-user">
                                         <h3>Platos</h3>
@@ -80,7 +80,7 @@
                             <div class="4u">                            
                                 <section>
                                     <center>                                       
-                                        <a href="eliminarPlatoTemplateAdmin.php"><img src="../../images/remove_male_user_98400.jpg" HEIGHT=235 WIDTH=300 alt=""></a>
+                                        <a href="eliminarPlatoTemplateAdmin.php"><img src="../../images/deleteEmpresa.jpg" HEIGHT=235 WIDTH=300 alt=""></a>
                                     </center>
                                     <header class="second fa fa-user">
                                         <h3>Platos</h3>

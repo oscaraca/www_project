@@ -32,7 +32,7 @@
                         </header>
                         <!-- Banner -->
                         <div id="banner">
-                            <h2><strong>EXTRAS</strong> 
+                            <h2><strong>USUARIOS</strong> 
                         </div>
                     </div>
                 </div>
@@ -58,33 +58,33 @@
                             <div class="4u">                            
                                 <section>
                                     <center>                                       
-                                        <a href="crearExtraTemplateAdmin.php"><img src="../../images/extra.jpg" HEIGHT=235 WIDTH=300 alt=""></a>
+                                        <a href="crearUsuarioTemplateAdmin.php"><img src="../../images/pic01.jpg" HEIGHT=235 WIDTH=300 alt=""></a>
                                     </center>
                                     <header class="second fa fa-user">
-                                        <h3>Extras</h3>
-                                        <span class="byline">Crear Extra</span>
+                                        <h3>Usuarios</h3>
+                                        <span class="byline">Crear Usuario</span>
                                     </header>
                                 </section>
                             </div>
                             <div class="4u">                            
                                 <section>
                                     <center>                                       
-                                        <a href="editarExtraTemplateAdmin.php"><img src="../../images/editEmpresa.jpg" HEIGHT=235 WIDTH=300 alt=""></a>
+                                        <a href="editarUsuarioTemplateAdmin.php"><img src="../../images/edit_male_user_98373.jpg" HEIGHT=235 WIDTH=300 alt=""></a>
                                     </center>
                                     <header class="second fa fa-user">
-                                        <h3>Extras</h3>
-                                        <span class="byline">Editar Extras</span>
+                                        <h3>Usuarios</h3>
+                                        <span class="byline">Editar Usuario</span>
                                     </header>
                                 </section>
                             </div>
                             <div class="4u">                            
                                 <section>
                                     <center>                                       
-                                        <a href="eliminarExtraTemplateAdmin.php"><img src="../../images/deleteEmpresa.jpg" HEIGHT=235 WIDTH=300 alt=""></a>
+                                        <a href="eliminarUsuarioTemplateAdmin.php"><img src="../../images/remove_male_user_98400.jpg" HEIGHT=235 WIDTH=300 alt=""></a>
                                     </center>
                                     <header class="second fa fa-user">
-                                        <h3>Extras</h3>
-                                        <span class="byline">Eliminar Extras</span>
+                                        <h3>Usuarios</h3>
+                                        <span class="byline">Eliminar Usuario</span>
                                     </header>
                                 </section>
                             </div>
