@@ -6,7 +6,7 @@ session_start();
 if ($_SESSION["autentificado"] != "SI") {
     //si no existe, envio a la página de autentificacion 
     //  throw new Exception("AQUI".$_SESSION["autentificado"]."AQUI");
-    header("Location: ../templates/index.php");
+    header("Location: ../../templates/index.php");
     //ademas salgo de este script 
     exit();
 }

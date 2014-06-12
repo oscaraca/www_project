@@ -21,9 +21,9 @@ if (isset($_POST['user']) && isset($_POST['pass'])) {
         session_start();
         $_SESSION['autentificado']='SI';        
         switch ($tipo) {
-            case 'Administrador': header('Location: ../templates/Administrador.php');
+            case 'Administrador': header('Location: ../templates/Administrador/Administrador.php');
                 break;
-            case 'administrador': header('Location: ../templates/TemplateUsuarios.php');
+            case 'administrador': header('Location: ../templates/admin.php');
                 break;
             case 'admin': header('Location: .html');
                 break;
