@@ -25,7 +25,8 @@ function consultaUsuarios() {
     closeDB($db);
 }
 
-function consultaPlatos() {
+function 
+consultaPlatos() {
     include_once('ConexionDB.php');
     $db = getDB();
     session_start();
@@ -39,6 +40,8 @@ function consultaPlatos() {
     }
     closeDB($db);
 }
+
+
 
 function consultaExtras() {
     include_once('ConexionDB.php');

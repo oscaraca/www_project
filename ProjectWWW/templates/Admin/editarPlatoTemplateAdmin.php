@@ -9,10 +9,10 @@ function obtenerAtributoPlato($tipo) {
     $plato_id = trim($_POST['plato_id']);
     $arraytid = explode(" ", $plato_id);
     $primer = $arraytid{0};
-    $_SESSION['plato_id'] = $primer;
+    //$_SESSION['plato_id'] = $primer;
 
     switch ($tipo) {
-        case 'nombre': $query = "SELECT nombre FROM plato WHERE plato_id='$primer'";
+        case 'nombre': $query = "SELECT nombre FROM plato WHERE plato_id='$primer'";               
             break;
         case 'ingredientes': $query = "SELECT ingredientes FROM plato WHERE plato_id='$primer'";
             break;
@@ -24,9 +24,12 @@ function obtenerAtributoPlato($tipo) {
             break;       
         default : break;
     }
+   
     $result = pg_query($db, $query);
     $fila = pg_fetch_array($result);
     $atributo = $fila[$tipo];
+    //print_r($tipo);
+    //throw Exception($tipo);
     closeDB($db);
     echo $atributo;
 }
@@ -94,7 +97,7 @@ function obtenerAtributoPlato($tipo) {
                                         <!-- Boton para crear registro usuario-->             
                                         <form role="form" action="../../controlador/Admin/editarPlatoAdmin.php" method="post"  data-ajax="false" onSubmit="return validarCampos();" >                                                                                       
                                             <br><label for="basic">Nombre</label>
-                                            <input type="text" id="nombre" name="nombre" class="form-control" value="<?php obtenerAtributoPlato('nombre') ?>"/>
+                                            <input type="text" id="nombre" name="nombre" class="form-control" value="<?php obtenerAtributoPlato("nombre") ?>"/>
                                             <br><label for="basic">Ingredientes</label>
                                             <input type="text" id="Ingredientes" name="ingredientes" class="form-control" value="<?php obtenerAtributoPlato('ingredientes') ?>"/>
                                             <br><label for="basic">Estado</label>
