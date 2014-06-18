@@ -24,8 +24,8 @@
                                 <!-- Nav -->
                                 <nav id="nav">
                                     <ul>
-                                        <li><a href="../Administrador/Administrador.php">Home</a></li> 
-                                        <li><a href="../Administrador/TemplateUsuariosAdministrador.php">Gestión Usuarios</a></li>                                        
+                                        <li><a href="Administrador.php">Home</a></li> 
+                                        <li><a href="TemplateUsuariosAdministrador.php">Gestión Usuarios</a></li>                                        
                                         <li><a href="../../serverPages/cerrarSesion.php">Cerrar Sesión</a></li>  
                                     </ul>
                                 </nav>
@@ -59,7 +59,7 @@
                             <div class="4u">                            
                                 <section>
                                     <center>                                       
-                                        <a href="../Administrador/empresa.php"><img src="../../images/pic02.jpg" HEIGHT=235 WIDTH=300 alt=""></a>
+                                        <a href="empresa.php"><img src="../../images/pic02.jpg" HEIGHT=235 WIDTH=300 alt=""></a>
                                     </center>
                                     <header class="second fa fa-user">
                                         <h3>Empresas</h3>
@@ -70,7 +70,7 @@
                             <div class="4u">                            
                                 <section>
                                     <center>                                       
-                                        <a href="../Administrador/editarEmpresaTemplateAdministrador.php"><img src="../../images/editEmpresa.jpg" HEIGHT=235 WIDTH=300 alt=""></a>
+                                        <a href="selEmpresaEditar.php"><img src="../../images/editEmpresa.jpg" HEIGHT=235 WIDTH=300 alt=""></a>
                                     </center>
                                     <header class="second fa fa-user">
                                         <h3>Empresas</h3>
@@ -81,7 +81,7 @@
                             <div class="4u">                            
                                 <section>
                                     <center>                                       
-                                        <a href="../Administrador/eliminarEmpresa.php"><img src="../../images/deleteEmpresa.jpg" HEIGHT=235 WIDTH=300 alt=""></a>
+                                        <a href="eliminarEmpresa.php"><img src="../../images/deleteEmpresa.jpg" HEIGHT=235 WIDTH=300 alt=""></a>
                                     </center>
                                     <header class="second fa fa-user">
                                         <h3>Empresas</h3>

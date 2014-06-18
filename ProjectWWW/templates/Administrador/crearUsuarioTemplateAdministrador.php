@@ -104,44 +104,43 @@ include_once('../../serverPages/seguridad.php');
                                                 <button type="submit" name="submit" class="btn btn-primary btn-block span12">Crear Usuario</button>
                                             </div>
                                         </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <?php
-                        if ($_GET['creacion'] == "si") {
-                            echo '<div class="row-fluid">                
+                                        <?php
+                                        if ($_GET['creacion'] == "si") {
+                                            echo '<div class="row-fluid">                
                     <center><div data-role="content">  
                         <h3><span style="color:#000000"><b>Datos Creados Correctamente</b></span></h3>                      
                     </div></center>
                  </div>';
-                        }
-                        ?>
+                                        }
+                                        ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                       
                     </section>
                 </div>       
             </div>
         </div>
         <script language="javascript">
             /*
-             *	Funcion en javascript para validar los campos antes que se envien y los procese el PHP
-             */
-            function validarCampos()
+            *	Funcion en javascript para validar los campos antes que se envien y los procese el PHP
+            */
+                function validarCampos()
             {
-                if (document.getElementById('nombre').value == "" ||
+                        if (document.getElementById('nombre').value == "" ||
                         document.getElementById('apellidos').value == "" ||
                         document.getElementById('email').value == "" ||
                         document.getElementById('direccion').value == "" ||
                         document.getElementById('tel').value == "" ||
                         document.getElementById('ide').value == "" ||
                         document.getElementById('username').value == "" ||
-                        document.getElementById('pass').value == "")
+                    document.getElementById('pass').value == "")
                 {
-                    alert("Debes llenar todos los campos");
+                alert("Debes llenar todos los campos");
 
                     return false;
                 } else {
-                    return true;
+            return true;
                 }
             }
 

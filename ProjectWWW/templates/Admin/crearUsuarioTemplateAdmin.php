@@ -94,23 +94,22 @@ include_once('../../serverPages/seguridad.php');
                                                 </select>                                
                                             </div>                                            
                                             <div class="form-group">
-                                                <button type="submit" name="submit" class="btn btn-primary btn-block span12">Crear Usuario</button>
+                                                <button type="submit" name="submit" class="btn btn-primary btn-block form-control">Crear Usuario</button>
                                             </div>
                                         </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <?php
-                        if ($_GET['creacion'] == "si") {
-                            echo '<div class="row-fluid">                
+                                        <?php
+                                        if ($_GET['creacion'] == "si") {
+                                            echo '<div class="row-fluid">                
                     <center><div data-role="content">  
                         <h3><span style="color:#000000"><b>Datos Creados Correctamente</b></span></h3>                      
                     </div></center>
                  </div>';
-                        }
-                        ?>
+                                        }
+                                        ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                       
                     </section>
                 </div>       
             </div>

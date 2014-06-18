@@ -80,21 +80,20 @@
                                                 <input type="number"  name="costo" id="costo" class="form-control" placeholder="Valor">
                                             </div>
                                             <div class="form-group">  
-                                                <button type="submit" name="submit" class="btn btn-primary span12" >Crear Plato</button>
+                                                <button type="submit" name="submit" class="btn btn-primary form-control" >Crear Plato</button>
                                             </div>
-                                        </form>                                       
+                                        </form>
+                                        <?php
+                                        if ($_GET['creacion'] == "si") {
+                                            echo '<h3><span style="color:#000000"><b>Datos Creados Correctamente</b></span></h3>';
+                                        } else {
+                                            echo $_GET['creacion'];
+                                        }
+                                        ?>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <?php
-                        if ($_GET['creacion'] == "si") {
-                            echo '<h3><span style="color:#000000"><b>Datos Creados Correctamente</b></span></h3>';
-                        } else {
-                            echo $_GET['creacion'];
-                        }
-                        ?>
+                        </div>                        
                     </section>
                 </div>       
             </div>

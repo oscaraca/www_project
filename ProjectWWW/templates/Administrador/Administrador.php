@@ -60,7 +60,7 @@
                             <div class="row">
                                 <div class="4u offset2">
                                     <section>
-                                        <span class="image image-full"><a href="../Administrador/TemplateEmpresaAdministrador.php"><img src="../../images/pic02.jpg" HEIGHT=235 WIDTH=300 alt=""></a></span>
+                                        <span class="image image-full"><a href="TemplateEmpresaAdministrador.php"><img src="../../images/pic02.jpg" HEIGHT=235 WIDTH=300 alt=""></a></span>
                                         <header class="second fa fa-bar-chart-o">
                                             <h3>Empresa</h3>
                                             <span class="byline">Manejo de Empresas</span>
@@ -69,7 +69,7 @@
                                 </div>
                                 <div class="4u offset2" >
                                     <section>
-                                        <span class="image image-full"> <a href="../Administrador/TemplateUsuariosAdministrador.php"><img src="../../images/pic01.jpg" HEIGHT=235 WIDTH=300 alt=""></a></span>
+                                        <span class="image image-full"> <a href="TemplateUsuariosAdministrador.php"><img src="../../images/pic01.jpg" HEIGHT=235 WIDTH=300 alt=""></a></span>
                                         <header class="second fa fa-bar-chart-o">
                                             <h3>Usuarios</h3>
                                             <span class="byline">Manejo de Usuarios</span>

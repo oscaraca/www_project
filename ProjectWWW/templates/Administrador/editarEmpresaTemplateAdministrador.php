@@ -1,4 +1,79 @@
-<?php include('../../serverPages/seguridad.php') ?>
+<?php
+include('../../serverPages/seguridad.php');
+
+//include_once ('../../controlador/atributos.php');
+
+function identificarEmpresa() {
+
+    include_once('../../serverPages/ConexionDB.php');
+    $db = getDB();
+    $tid = trim($_POST['tid']);
+    $arraytid = explode(" ", $tid);
+    print_r($arraytid);
+    $primer = $arraytid{0};
+    $query = "SELECT nombre, url, direccion, telefonos, logo FROM tenant WHERE tid='$primer'";
+
+    $result = pg_query($db, $query);
+    $row = pg_fetch_row($query);
+    $fila = pg_fetch_array($result);
+
+    $image = pg_unescape_bytea($row[4]);
+    header("Content-type: image/jpeg");
+
+    $nombre = $fila['nombre'];
+    $url = $fila['url'];
+    $direccion = $fila['direccion'];
+    $telefonos = $fila['telefonos'];
+    closeDB($db);
+
+    echo "Bienvenido " . $nombre . " " . $image . " Direccion: " . $direccion . " Teléfono:" . $telefonos;
+}
+
+function obtenerAtributoEmpresa($tipo) {
+    include_once('../../serverPages/ConexionDB.php');
+    $db = getDB();
+    session_start();
+    $tid = trim($_POST['tid']);
+    $arraytid = explode(" ", $tid);
+    $primer = $arraytid{0};
+    $_SESSION['tid'] = $primer;
+
+    switch ($tipo) {
+        case 'nombre': $query = "SELECT nombre FROM tenant WHERE tid='$primer'";
+            break;
+        case 'direccion': $query = "SELECT direccion FROM tenant WHERE tid='$primer'";
+            break;
+        case 'telefonos': $query = "SELECT telefonos FROM tenant WHERE tid='$primer'";
+            break;
+        case 'url': $query = "SELECT url FROM tenant WHERE tid='$primer'";
+            break;
+        default : break;
+    }
+    $result = pg_query($db, $query);
+    $fila = pg_fetch_array($result);
+    $atributo = $fila[$tipo];
+    closeDB($db);
+    echo $atributo;
+}
+
+function obtenerLogoEmpresa() {
+    // Connect to the database
+    include_once('../../serverPages/ConexionDB.php');
+    $db = getDB();
+    // Get the bytea data
+    $tid = trim($_POST['tid']);
+    $arraytid = explode(" ", $tid);
+    $primer = $arraytid{0};
+    $query = "SELECT logo FROM tenant WHERE tid= '$primer'";
+    $result = pg_query($db, $query);
+    $row = pg_fetch_row($result);
+
+    $image = pg_unescape_bytea($row[0]);
+    header("Content-type: image/jpeg");
+    //throw Exception($image);
+    echo $image;
+}
+?>
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -17,7 +92,10 @@
         <link rel="stylesheet" href="../../css/skel-noscript.css" />
         <link rel="stylesheet" href="../../css/style.css" />
         <link rel="stylesheet" href="../../css/style-desktop.css" />
-
+        <!--<link href="../../jquery-mobile/jquery.mobile-1.0.min.css" rel="stylesheet" type="text/css"></link>
+        <script src="../../jquery-mobile/jquery-1.6.4.min.js" type="text/javascript"></script>
+        <script src="../../jquery-mobile/jquery.mobile-1.0.min.js" type="text/javascript"></script> 
+        -->
     <body class="homepage">
         <!-- Header Wrapper -->
         <div id="header-wrapper">
@@ -63,63 +141,58 @@
                                         <div id="empresa" >
                                             <!-- Boton para crear registro empresa-->
                                             <form action="../../controlador/Administrador/editarEmpresa.php" method="post"  data-ajax="false" onSubmit="return validarCampos();" >    
-                                                <div class="form-group"> 
-                                                    <input type="text" id="nombre" name="nombre" class="form-control" value=""/>
-                                                </div>
-                                                <div class="form-group" >
-                                                    <input type="file" name="logo" id="logo" value="" multiple/>
-                                                </div>
-                                                <div class="form-group"> 
-                                                    <input type="url" id="url" class="form-control" name="url" value=""/>
-                                                </div>
-                                                <div class="form-group"> 
-                                                    <input type="tel" id="tel" name="tel" class="form-control" value=""/>
-                                                </div>
-                                                <div class="form-group"> 
-                                                    <input type="text"  id="direccion" name="direccion" class="form-control" value=""/>
-                                                </div>
-                                                <button type="submit" name="submit" class="btn btn-primary btn-block span12">Editar Empresa</button>
-                                            </form>                                          
-                                        </div>
-                                    </section>
-                                </div>
-                            </div>
-                        </div>
-
-                        <?php
-                        if ($_GET['var'] == "si") {
-                            echo '<div class="row-fluid">                
+                                                <br><label for="basic">Nombre</label>
+                                                <input type="text" id="nombre" class="form-control" name="nombre" value="<?php obtenerAtributoEmpresa('nombre') ?>"/>                                               
+                                                <br><label for="basic">URL</label> 
+                                                <input type="text" id="url" class="form-control" name="url" value="<?php obtenerAtributoEmpresa('url') ?>"/>
+                                                <br><label for="basic">Telefono</label>    
+                                                <input type="text" id="tel" name="tel" class="form-control" value="<?php obtenerAtributoEmpresa('telefonos') ?>"/>
+                                                <br><label for="basic">Dirección</label>    
+                                                <input type="text"  id="direccion" name="direccion" class="form-control" value="<?php obtenerAtributoEmpresa('direccion') ?>"/>
+                                                <center><br><label for="basic">Logo</label>    
+                                                    <img type="file" name="logo" value="  <?php obtenerLogoEmpresa() ?>" id="logo" multiple/>
+                                                </center>
+                                                <br>
+                                                <button type="submit" name="submit" class="btn btn-primary btn-block form-control">Editar Empresa</button>
+                                            </form>
+                                            <?php
+                                            if ($_GET['var'] == "si") {
+                                                echo '<div class="row-fluid">                
                     <center><div data-role="content">
                         <h3><span style="color:#000000"><b>Datos Actualizados Correctamente</b></span></h3>
                         
                     </div></center>
                  </div>';
-                        }
-                        ?>
+                                            }
+                                            ?>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>                        
                     </section>
                 </div>       
             </div>
         </div>
         <script language="javascript">
-            /*
+             /*
              *	Funcion en javascript para validar los campos antes que se envien y los procese el PHP
-             */
+            */
             function validarCampos()
-            {
-                if (document.getElementById('nombre').value == "" ||
+                {
+                        if (document.getElementById('nombre').value == "" ||
                         document.getElementById('url').value == "" ||
                         document.getElementById('direccion').value == "" ||
                         document.getElementById('tel').value == "" ||
-                        document.getElementById('logo').value == "")
-                {
+                document.getElementById('logo').value == "")
+                    {
                     alert("Debes llenar todos los campos");
-
-                    return false;
-                } else {
-                    return true;
-                }
+                    
+                return false;
+                    } else {
+                return true;
             }
-
+            }
         </script>
         <!--Fin div crear empresa -->
         <!------------------------------------------------------------------->

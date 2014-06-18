@@ -24,8 +24,8 @@
                                 <!-- Nav -->
                                 <nav id="nav">
                                     <ul>
-                                        <li><a href="../Administrador/Administrador.php">Home</a></li>   
-                                        <li><a href="../Administrador/TemplateEmpresaAdministrador.php">Gestión Empresa</a></li>                                        
+                                        <li><a href="Administrador.php">Home</a></li>   
+                                        <li><a href="TemplateEmpresaAdministrador.php">Gestión Empresa</a></li>                                        
                                         <li><a href="../../serverPages/cerrarSesion.php">Cerrar Sesión</a></li>  
                                     </ul>
                                 </nav>
@@ -59,7 +59,7 @@
                             <div class="4u">                            
                                 <section>
                                     <center>                                       
-                                        <a href="../Administrador/crearUsuarioTemplateAdministrador.php"><img src="../../images/pic01.jpg" HEIGHT=235 WIDTH=300 alt=""></a>
+                                        <a href="crearUsuarioTemplateAdministrador.php"><img src="../../images/pic01.jpg" HEIGHT=235 WIDTH=300 alt=""></a>
                                     </center>
                                     <header class="second fa fa-user">
                                         <h3>Usuarios</h3>
@@ -70,7 +70,7 @@
                             <div class="4u">                            
                                 <section>
                                     <center>                                       
-                                        <a href="../Administrador/editarUsuarioTemplateAdministrador.php"><img src="../../images/edit_male_user_98373.jpg" HEIGHT=235 WIDTH=300 alt=""></a>
+                                        <a href="selUsuarioaEditar.php"><img src="../../images/edit_male_user_98373.jpg" HEIGHT=235 WIDTH=300 alt=""></a>
                                     </center>
                                     <header class="second fa fa-user">
                                         <h3>Usuarios</h3>
@@ -81,7 +81,7 @@
                             <div class="4u">                            
                                 <section>
                                     <center>                                       
-                                        <a href="../Administrador/eliminarUsuarioTemplateAdministrador.php"><img src="../../images/remove_male_user_98400.jpg" HEIGHT=235 WIDTH=300 alt=""></a>
+                                        <a href="eliminarUsuarioTemplateAdministrador.php"><img src="../../images/remove_male_user_98400.jpg" HEIGHT=235 WIDTH=300 alt=""></a>
                                     </center>
                                     <header class="second fa fa-user">
                                         <h3>Usuarios</h3>

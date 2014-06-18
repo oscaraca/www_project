@@ -34,8 +34,8 @@
                                 <!-- Nav -->
                                 <nav id="nav">
                                     <ul>
-                                        <li><a href="../Administrador/Administrador.php">Home</a></li> 
-                                        <li><a href="../Administrador/TemplateEmpresaAdministrador.php">Gestión Empresas</a></li>                                       
+                                        <li><a href="Administrador.php">Home</a></li> 
+                                        <li><a href="TemplateEmpresaAdministrador.php">Gestión Empresas</a></li>                                       
                                     </ul>
                                 </nav>
                             </div>
@@ -78,46 +78,46 @@
                                                 <div class="form-group"> 
                                                     <input type="text"  id="direccion" name="direccion" class="form-control" placeholder="Direccion"/>
                                                 </div>
-                                                <button type="submit" name="submit" class="btn btn-primary btn-block span12">Crear Empresa</button>
+                                                <button type="submit" name="submit" class="btn btn-primary btn-block form-control">Crear Empresa</button>
                                             </form>                                          
+                                            <?php
+                                            if ($_GET['var'] == "si") {
+                                                echo '<div class="row-fluid">
+                                <div class="form-group"> 
+                    <center><div data-role="content">
+                    <a class="btn btn-primary form-control" type="button" href="../Administrador/crearUsuarioTemplateAdministrador.php">Crear Usuarios</a>
+                        <h3><span style="color:#000000"><b>Datos Creados Correctamente</b></span></h3>
+                        
+                    </div></center></div>
+                 </div>';
+                                            }
+                                            ?>
                                         </div>
                                     </section>
                                 </div>
                             </div>
-                        </div>
-
-                        <?php
-                        if ($_GET['var'] == "si") {
-                            echo '<div class="row-fluid">                
-                    <center><div data-role="content">
-                    <a class="btn btn-primary span12" type="button" href="../Administrador/crearUsuarioTemplateAdministrador.php">Crear Usuarios</a>
-                        <h3><span style="color:#000000"><b>Datos Creados Correctamente</b></span></h3>
-                        
-                    </div></center>
-                 </div>';
-                        }
-                        ?>
+                        </div>                  
                     </section>
                 </div>       
             </div>
         </div>
         <script language="javascript">
             /*
-             *	Funcion en javascript para validar los campos antes que se envien y los procese el PHP
-             */
-            function validarCampos()
+            *	Funcion en javascript para validar los campos antes que se envien y los procese el PHP
+            */
+                function validarCampos()
             {
-                if (document.getElementById('nombre').value == "" ||
+                        if (document.getElementById('nombre').value == "" ||
                         document.getElementById('url').value == "" ||
                         document.getElementById('direccion').value == "" ||
                         document.getElementById('tel').value == "" ||
-                        document.getElementById('logo').value == "")
+                    document.getElementById('logo').value == "")
                 {
-                    alert("Debes llenar todos los campos");
+                alert("Debes llenar todos los campos");
 
                     return false;
                 } else {
-                    return true;
+            return true;
                 }
             }
 

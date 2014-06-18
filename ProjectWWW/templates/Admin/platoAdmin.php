@@ -69,7 +69,7 @@
                             <div class="4u">                            
                                 <section>
                                     <center>                                       
-                                        <a href="editarPlatoTemplateAdmin.php"><img src="../../images/editEmpresa.jpg" HEIGHT=235 WIDTH=300 alt=""></a>
+                                        <a href="selPlatoEditar.php"><img src="../../images/editEmpresa.jpg" HEIGHT=235 WIDTH=300 alt=""></a>
                                     </center>
                                     <header class="second fa fa-user">
                                         <h3>Platos</h3>

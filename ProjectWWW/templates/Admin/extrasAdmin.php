@@ -69,7 +69,7 @@
                             <div class="4u">                            
                                 <section>
                                     <center>                                       
-                                        <a href="editarExtraTemplateAdmin.php"><img src="../../images/editEmpresa.jpg" HEIGHT=235 WIDTH=300 alt=""></a>
+                                        <a href="selExtraEditar.php"><img src="../../images/editEmpresa.jpg" HEIGHT=235 WIDTH=300 alt=""></a>
                                     </center>
                                     <header class="second fa fa-user">
                                         <h3>Extras</h3>
