@@ -27,7 +27,7 @@
 		font-size: 11pt;
 		line-height: 1.85em;
 		color: #888;
-		background: url('images/bg02.jpg');
+		/* background: url('images/bg02.jpg'); */
 	}
 	
 	a
@@ -960,12 +960,12 @@
 	#header-wrapper
 	{
 		background: url('../images/banner.jpg') top center;
-		background-size: 100%;
+		background-size: 50%;
 	}
 	
 		body.homepage #header-wrapper
 		{
-			background-size: cover;
+			background-size: 100%;
 		}
 	
 	#banner-wrapper

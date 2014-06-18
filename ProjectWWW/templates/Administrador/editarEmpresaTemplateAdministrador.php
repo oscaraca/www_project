@@ -1,15 +1,13 @@
 <?php
 include('../../serverPages/seguridad.php');
 
-//include_once ('../../controlador/atributos.php');
-
 function identificarEmpresa() {
 
     include_once('../../serverPages/ConexionDB.php');
     $db = getDB();
     $tid = trim($_POST['tid']);
     $arraytid = explode(" ", $tid);
-    print_r($arraytid);
+    //print_r($arraytid);
     $primer = $arraytid{0};
     $query = "SELECT nombre, url, direccion, telefonos, logo FROM tenant WHERE tid='$primer'";
 
@@ -31,11 +29,11 @@ function identificarEmpresa() {
 
 function obtenerAtributoEmpresa($tipo) {
     include_once('../../serverPages/ConexionDB.php');
-    $db = getDB();
-    session_start();
+    $db = getDB();    
     $tid = trim($_POST['tid']);
     $arraytid = explode(" ", $tid);
     $primer = $arraytid{0};
+    session_start();
     $_SESSION['tid'] = $primer;
 
     switch ($tipo) {

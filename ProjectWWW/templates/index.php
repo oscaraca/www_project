@@ -23,8 +23,8 @@
                     <div class="row-fluid span12">                        
                             <legend>Please Sign In</legend>
                             <form action="../serverPages/login.php" method="post">  
-                                <input type="text" id="username" class="form-control" name="user" placeholder="Username" />
-                                <input type="password" id="password" class="form-control" name="pass" placeholder="Password" />            
+                                <input type="text" id="username" class="form-control"  name="user" placeholder="Username" />
+                                <input type="password" id="password" class="form-control " name="pass" placeholder="Password" />            
                                 <button type="submit" name="submit"  class="btn btn-primary btn-block form-control">Sign in</button>
                             </form>                       
                     </div>                
