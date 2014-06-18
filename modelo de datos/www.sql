@@ -28,7 +28,7 @@ CREATE TABLE usuario (
 	tipo_usuario VARCHAR(20), --VALORES("administrador", "cajero", "admin") NOTA: "administrador" PARA EL ADMINISTRADOR DE CADA EMPRESA, "admin" PARA EL ADMINISTRADOR DE TODA LA APLICACION
 	password VARCHAR(100),
 	email VARCHAR(100),
-	identifacion VARCHAR(20),
+	identificacion VARCHAR(20),
 	PRIMARY KEY (usuario_id, TID),
 	FOREIGN KEY (TID) REFERENCES tenant(TID)
 );
@@ -108,3 +108,96 @@ CREATE TABLE pedido_tiene_adicional (
 	cantidad INTEGER, --CANTIDAD DE ESE ADICIONAL EN ESE PEDIDO
 	PRIMARY KEY (pedido_consecutivo, adicional_id)
 );
+
+--Insertando tenants
+INSERT INTO tenant (nombre, url, direccion, telefonos) VALUES ('Sandwich Qbano', 'www.sandwichqbano.com', 'calle 13 # 100 - unicentro - local 134', '3352530-3352532');
+INSERT INTO tenant (nombre, url, direccion, telefonos) VALUES ('Mr wok', 'www.mrwok.com', 'calle 13 # 100 - unicentro - local 135', '3352534-3352536');
+INSERT INTO tenant (nombre, url, direccion, telefonos) VALUES ('Kokoriko', 'www.kokoriko.com', 'Cll. 24F No. 94', '4453625');
+INSERT INTO tenant (nombre, url, direccion, telefonos) VALUES ('La Areperia', 'www.laareperia.com', 'Av 3IN # 51N-47', '4855448');
+INSERT INTO tenant (nombre, url, direccion, telefonos) VALUES ('El Corral', 'www.elcorral.com', 'Calle 9 # 65A-45', '3245465');
+
+
+--Insertando usuarios
+INSERT INTO usuario VALUES ('pepitoperez', 4, 'Pepito', 'Perez', 'Calle 2C # 24-15', '7764930', 'cajero', '12345', 'pepito.perez@gmail.com', '823748201');
+INSERT INTO usuario VALUES ('juanitosuarez', 4, 'Juanito', 'Suarez', 'Calle 2C # 24-15', '7764930', 'cajero', '12345', 'juanito.suarez@gmail.com', '823748201');
+INSERT INTO usuario VALUES ('juanospina', 4, 'Juan', 'Ospina', 'Calle 2C # 24-15', '7764930', 'cajero', '12345', 'juan.ospina@correounivalle.edu.co', '823748201');
+INSERT INTO usuario VALUES ('camiloaqm', 3, 'Camilo', 'Quintero', 'Calle 2C # 24-15', '7764930', 'administrador', '12345', 'camilo.quintero@correounivalle.edu.co', '823748201');
+INSERT INTO usuario VALUES ('oscaraca', 4, 'Oscar', 'Chavarriaga', 'Cra 29A2 # 12B-60', '3104495059', 'administrador', '12345', 'oscar.chavarriaga@correounivalle.edu.co', '1107063417');
+
+
+--Insertando pedidos
+INSERT INTO pedido (TID, usuario_id, fecha, estado, pagado, modo_de_pago, costo) VALUES (4, 'pepitoperez', CURRENT_TIMESTAMP, 'terminado', true, 'efectivo', 75000);
+INSERT INTO pedido (TID, usuario_id, fecha, estado, pagado, modo_de_pago, costo) VALUES (4, 'pepitoperez', CURRENT_TIMESTAMP, 'terminado', true, 'efectivo', 25000);
+INSERT INTO pedido (TID, usuario_id, fecha, estado, pagado, modo_de_pago, costo) VALUES (4, 'pepitoperez', CURRENT_TIMESTAMP, 'terminado', true, 'efectivo', 45000);
+INSERT INTO pedido (TID, usuario_id, fecha, estado, pagado, modo_de_pago, costo) VALUES (4, 'pepitoperez', CURRENT_TIMESTAMP, 'terminado', true, 't_credito', 37800);
+INSERT INTO pedido (TID, usuario_id, fecha, estado, pagado, modo_de_pago, costo) VALUES (4, 'pepitoperez', CURRENT_TIMESTAMP, 'terminado', true, 'efectivo', 132500);
+INSERT INTO pedido (TID, usuario_id, fecha, estado, pagado, modo_de_pago, costo) VALUES (4, 'pepitoperez', CURRENT_TIMESTAMP, 'terminado', true, 'efectivo', 56300);
+INSERT INTO pedido (TID, usuario_id, fecha, estado, pagado, modo_de_pago, costo) VALUES (4, 'pepitoperez', CURRENT_TIMESTAMP, 'terminado', true, 't_debito', 70000);
+INSERT INTO pedido (TID, usuario_id, fecha, estado, pagado, modo_de_pago, costo) VALUES (4, 'pepitoperez', CURRENT_TIMESTAMP, 'terminado', true, 't_debito', 15400);
+INSERT INTO pedido (TID, usuario_id, fecha, estado, pagado, modo_de_pago, costo) VALUES (4, 'pepitoperez', CURRENT_TIMESTAMP, 'terminado', true, 'efectivo', 12400);
+INSERT INTO pedido (TID, usuario_id, fecha, estado, pagado, modo_de_pago, costo) VALUES (4, 'pepitoperez', CURRENT_TIMESTAMP, 'cancelado', false, 'none', 0);
+INSERT INTO pedido (TID, usuario_id, fecha, estado, pagado, modo_de_pago, costo) VALUES (4, 'pepitoperez', CURRENT_TIMESTAMP, 'cancelado', false, 'none', 0);
+INSERT INTO pedido (TID, usuario_id, fecha, estado, pagado, modo_de_pago, costo) VALUES (4, 'pepitoperez', CURRENT_TIMESTAMP, 'cancelado', false, 'none', 0);
+--12
+INSERT INTO pedido (TID, usuario_id, fecha, estado, pagado, modo_de_pago, costo) VALUES (4, 'juanitosuarez', CURRENT_TIMESTAMP, 'terminado', true, 'efectivo', 75000);
+INSERT INTO pedido (TID, usuario_id, fecha, estado, pagado, modo_de_pago, costo) VALUES (4, 'juanitosuarez', CURRENT_TIMESTAMP, 'terminado', true, 't_debito', 25000);
+INSERT INTO pedido (TID, usuario_id, fecha, estado, pagado, modo_de_pago, costo) VALUES (4, 'juanitosuarez', CURRENT_TIMESTAMP, 'terminado', true, 'efectivo', 45000);
+INSERT INTO pedido (TID, usuario_id, fecha, estado, pagado, modo_de_pago, costo) VALUES (4, 'juanitosuarez', CURRENT_TIMESTAMP, 'terminado', true, 'efectivo', 37800);
+INSERT INTO pedido (TID, usuario_id, fecha, estado, pagado, modo_de_pago, costo) VALUES (4, 'juanitosuarez', CURRENT_TIMESTAMP, 'terminado', true, 'efectivo', 132500);
+INSERT INTO pedido (TID, usuario_id, fecha, estado, pagado, modo_de_pago, costo) VALUES (4, 'juanitosuarez', CURRENT_TIMESTAMP, 'terminado', true, 'efectivo', 56300);
+INSERT INTO pedido (TID, usuario_id, fecha, estado, pagado, modo_de_pago, costo) VALUES (4, 'juanitosuarez', CURRENT_TIMESTAMP, 'cancelado', false, 'none', 0);
+
+INSERT INTO pedido (TID, usuario_id, fecha, estado, pagado, modo_de_pago, costo) VALUES (4, 'juanospina', CURRENT_TIMESTAMP, 'terminado', true, 'efectivo', 75000);
+INSERT INTO pedido (TID, usuario_id, fecha, estado, pagado, modo_de_pago, costo) VALUES (4, 'juanospina', CURRENT_TIMESTAMP, 'terminado', true, 'efectivo', 25000);
+INSERT INTO pedido (TID, usuario_id, fecha, estado, pagado, modo_de_pago, costo) VALUES (4, 'juanospina', CURRENT_TIMESTAMP, 'terminado', true, 'efectivo', 45000);
+INSERT INTO pedido (TID, usuario_id, fecha, estado, pagado, modo_de_pago, costo) VALUES (4, 'juanospina', CURRENT_TIMESTAMP, 'terminado', true, 't_credito', 37800);
+INSERT INTO pedido (TID, usuario_id, fecha, estado, pagado, modo_de_pago, costo) VALUES (4, 'juanospina', CURRENT_TIMESTAMP, 'terminado', true, 'efectivo', 132500);
+INSERT INTO pedido (TID, usuario_id, fecha, estado, pagado, modo_de_pago, costo) VALUES (4, 'juanospina', CURRENT_TIMESTAMP, 'terminado', true, 'efectivo', 56300);
+INSERT INTO pedido (TID, usuario_id, fecha, estado, pagado, modo_de_pago, costo) VALUES (4, 'juanospina', CURRENT_TIMESTAMP, 'terminado', true, 't_debito', 70000);
+INSERT INTO pedido (TID, usuario_id, fecha, estado, pagado, modo_de_pago, costo) VALUES (4, 'juanospina', CURRENT_TIMESTAMP, 'terminado', true, 't_debito', 15400);
+INSERT INTO pedido (TID, usuario_id, fecha, estado, pagado, modo_de_pago, costo) VALUES (4, 'juanospina', CURRENT_TIMESTAMP, 'terminado', true, 'efectivo', 12400);
+INSERT INTO pedido (TID, usuario_id, fecha, estado, pagado, modo_de_pago, costo) VALUES (4, 'juanospina', CURRENT_TIMESTAMP, 'terminado', true, 'efectivo', 25000);
+INSERT INTO pedido (TID, usuario_id, fecha, estado, pagado, modo_de_pago, costo) VALUES (4, 'juanospina', CURRENT_TIMESTAMP, 'terminado', true, 't_credito', 45000);
+INSERT INTO pedido (TID, usuario_id, fecha, estado, pagado, modo_de_pago, costo) VALUES (4, 'juanospina', CURRENT_TIMESTAMP, 'terminado', true, 'efectivo', 37800);
+INSERT INTO pedido (TID, usuario_id, fecha, estado, pagado, modo_de_pago, costo) VALUES (4, 'juanospina', CURRENT_TIMESTAMP, 'terminado', true, 'efectivo', 132500);
+INSERT INTO pedido (TID, usuario_id, fecha, estado, pagado, modo_de_pago, costo) VALUES (4, 'juanospina', CURRENT_TIMESTAMP, 'terminado', true, 'efectivo', 56300);
+INSERT INTO pedido (TID, usuario_id, fecha, estado, pagado, modo_de_pago, costo) VALUES (4, 'juanospina', CURRENT_TIMESTAMP, 'terminado', true, 't_debito', 70000);
+INSERT INTO pedido (TID, usuario_id, fecha, estado, pagado, modo_de_pago, costo) VALUES (4, 'juanospina', CURRENT_TIMESTAMP, 'terminado', true, 't_debito', 15400);
+INSERT INTO pedido (TID, usuario_id, fecha, estado, pagado, modo_de_pago, costo) VALUES (4, 'juanospina', CURRENT_TIMESTAMP, 'terminado', true, 'efectivo', 12400);
+INSERT INTO pedido (TID, usuario_id, fecha, estado, pagado, modo_de_pago, costo) VALUES (4, 'juanospina', CURRENT_TIMESTAMP, 'cancelado', false, 'none', 0);
+INSERT INTO pedido (TID, usuario_id, fecha, estado, pagado, modo_de_pago, costo) VALUES (4, 'juanospina', CURRENT_TIMESTAMP, 'cancelado', false, 'none', 0);
+INSERT INTO pedido (TID, usuario_id, fecha, estado, pagado, modo_de_pago, costo) VALUES (4, 'juanospina', CURRENT_TIMESTAMP, 'cancelado', false, 'none', 0);
+
+--Insertando platos
+INSERT INTO plato (TID, nombre, ingredientes, estado, fecha, costo) VALUES (4, 'Arepa sencilla', 'queso-mantequilla', 'activo', CURRENT_TIMESTAMP, 2500);
+INSERT INTO plato (TID, nombre, ingredientes, estado, fecha, costo) VALUES (4, 'Arepa Jamon y Queso', 'queso-mantequilla-jamon', 'activo', CURRENT_TIMESTAMP, 3500);
+INSERT INTO plato (TID, nombre, ingredientes, estado, fecha, costo) VALUES (4, 'Arepa con todo', 'queso-mantequilla-jamon-carne-pollo-chicharron-lechuga-tomate', 'activo', CURRENT_TIMESTAMP, 8500);
+INSERT INTO plato (TID, nombre, ingredientes, estado, fecha, costo) VALUES (4, 'Arepa carnivora', 'jamon-carne-pollo-chicharron', 'activo', CURRENT_TIMESTAMP, 7000);
+INSERT INTO plato (TID, nombre, ingredientes, estado, fecha, costo) VALUES (4, 'Arepa vegetariana', 'queso-mantequilla-lechuga-tomate', 'activo', CURRENT_TIMESTAMP, 4000);
+
+--Insertando platos en pedidos
+INSERT INTO pedido_tiene_plato VALUES (1, 1, 1);
+INSERT INTO pedido_tiene_plato VALUES (1, 2, 1);
+INSERT INTO pedido_tiene_plato VALUES (1, 3, 1);
+INSERT INTO pedido_tiene_plato VALUES (2, 1, 3);
+INSERT INTO pedido_tiene_plato VALUES (2, 4, 1);
+INSERT INTO pedido_tiene_plato VALUES (3, 3, 1);
+INSERT INTO pedido_tiene_plato VALUES (3, 4, 1);
+INSERT INTO pedido_tiene_plato VALUES (3, 5, 2);
+INSERT INTO pedido_tiene_plato VALUES (3, 1, 1);
+INSERT INTO pedido_tiene_plato VALUES (4, 3, 5);
+INSERT INTO pedido_tiene_plato VALUES (4, 2, 1);
+INSERT INTO pedido_tiene_plato VALUES (4, 4, 1);
+INSERT INTO pedido_tiene_plato VALUES (4, 1, 1);
+INSERT INTO pedido_tiene_plato VALUES (5, 3, 6);
+INSERT INTO pedido_tiene_plato VALUES (5, 1, 2);
+INSERT INTO pedido_tiene_plato VALUES (6, 1, 1);
+INSERT INTO pedido_tiene_plato VALUES (6, 2, 1);
+INSERT INTO pedido_tiene_plato VALUES (6, 3, 4);
+INSERT INTO pedido_tiene_plato VALUES (6, 4, 2);
+INSERT INTO pedido_tiene_plato VALUES (6, 5, 1);
+INSERT INTO pedido_tiene_plato VALUES (7, 1, 1);
+INSERT INTO pedido_tiene_plato VALUES (7, 2, 1);
+INSERT INTO pedido_tiene_plato VALUES (7, 3, 3);
+INSERT INTO pedido_tiene_plato VALUES (7, 4, 3);
+INSERT INTO pedido_tiene_plato VALUES (7, 5, 1);
