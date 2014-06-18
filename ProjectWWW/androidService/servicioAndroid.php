@@ -7,7 +7,7 @@ $se = json_decode(stripslashes($_POST["key"]));
 //echo $se->codigoPedido."modif\n";
 $codigo_pedido = $se->codigoPedido;
 
-include('ConexionDB.php');
+include('../serverPages/ConexionDB.php');
 $query = "SELECT estado FROM pedido WHERE consecutivo=$se->codigoPedido";
 $result = pg_query(getDB(), $query);
 $row = pg_fetch_array($result);
