@@ -2,26 +2,23 @@
 include_once('../../serverPages/listaAtributos.php');
 include_once('../../serverPages/seguridad.php');
 
-
 function obtenerAtributoAdicional($tipo) {
     include_once('../../serverPages/ConexionDB.php');
-    $db = getDB();   
-        
+    $db = getDB();
+    session_start();
+    $adicional_id = trim($_POST['adicional_id']);
+    $arraytid = explode(" ", $adicional_id);
+    $primer = $arraytid{0};
+    $_SESSION['$adicional_id'] = $primer;
     switch ($tipo) {
-        case 'nombre': $query = "SELECT nombre FROM usuario WHERE usuario_id='$usuario_id'";
+        case 'nombre': $query = "SELECT nombre FROM adicional WHERE adicional_id='$primer'";
             break;
-        case 'apellido': $query = "SELECT apellido FROM usuario WHERE usuario_id='$usuario_id'";
+        case 'descripcion': $query = "SELECT descripcion FROM adicional WHERE adicional_id='$primer'";
             break;
-        case 'direccion': $query = "SELECT direccion FROM usuario WHERE usuario_id='$usuario_id'";
+        case 'costo': $query = "SELECT costo FROM adicional WHERE adicional_id='$primer'";
             break;
-        case 'telefono': $query = "SELECT telefono FROM usuario WHERE usuario_id='$usuario_id'";
+        case 'plato': $query = "SELECT plato_id FROM adicional WHERE adicional_id='$primer'";
             break;
-        case 'password': $query = "SELECT password FROM usuario WHERE usuario_id='$usuario_id'";
-            break;
-        case 'email': $query = "SELECT email FROM usuario WHERE usuario_id='$usuario_id'";
-            break;
-        case 'identificacion': $query = "SELECT identificacion FROM usuario WHERE usuario_id='$usuario_id'";
-            break;       
         default : break;
     }
     $result = pg_query($db, $query);
@@ -30,7 +27,6 @@ function obtenerAtributoAdicional($tipo) {
     closeDB($db);
     echo $atributo;
 }
-
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -91,17 +87,16 @@ function obtenerAtributoAdicional($tipo) {
                                     <div id="extra" >
                                         <!-- Boton para crear registro usuario-->  
                                         <form role="form"  action="../../controlador/Admin/editarAdicion.php" method="post"  data-ajax="false" onSubmit="return validarCampos();">                                            
-
-                                            <input type="text" class="form-control" id="nombre" name="nombre" value="" >
-
-                                            <input type="text" id="descripcion" class="form-control" name="descripcion" value="" />
-
+                                            <input type="text" class="form-control" id="nombre" name="nombre" value="<?php obtenerAtributoAdicional('nombre') ?>" >
+                                            <input type="text" id="descripcion" class="form-control" name="descripcion" value="<?php obtenerAtributoAdicional('descripcion') ?>" />
                                             <select name="plato_id" class="form-control">
-                                                 <option value="<?php obtenerPlato() ?>"><?php obtenerPlato() ?></option>
-<?php consultaPlatos() ?>
+                                                <option value="<?php obtenerAtributoAdicional('plato') ?>">
+                                                    <?php obtenerAtributoAdicional('plato') ?>
+                                                </option>
+                                                <?php consultaPlatos() ?>
                                             </select>    
 
-                                            <input type="number"  name="costo" id="costo" class="form-control" value="" >
+                                            <input type="number"  name="costo" id="costo" class="form-control" value="<?php obtenerAtributoAdicional('costo') ?>" >
 
                                             <button type="submit" name="submit" class="btn btn-primary form-control" >Editar Extra</button>
 

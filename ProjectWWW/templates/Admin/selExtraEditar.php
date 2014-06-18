@@ -66,7 +66,7 @@ include_once('../../serverPages/seguridad.php');
                                         <form action="editarExtraTemplateAdmin.php" method="post"  data-ajax="false" >    
                                             <div class="form-group">
                                                 <h3><span style="color:#3366FF ">Extras</span></h3>                                
-                                                <select name="tid" class="form-control">
+                                                <select name="adicional_id" class="form-control">
                                                     <?php consultaExtras() ?>
                                                 </select>
                                             </div>

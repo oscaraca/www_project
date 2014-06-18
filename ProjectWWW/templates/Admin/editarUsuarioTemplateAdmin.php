@@ -80,7 +80,7 @@ function obtenerAtributoUsuario($tipo) {
                                 <nav id="nav">
                                     <ul>
                                         <li><a href="../Admin/admin.php">Home</a></li> 
-                                        <li><a href="../Admin/usuariosAdmin">Gestión Usuarios</a></li>                                       
+                                        <li><a href="../Admin/usuariosAdmin.php">Gestión Usuarios</a></li>                                       
                                     </ul>
                                 </nav>
                             </div>
