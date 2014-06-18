@@ -5,10 +5,10 @@ include_once('../../serverPages/seguridad.php');
 function obtenerAtributoAdicional($tipo) {
     include_once('../../serverPages/ConexionDB.php');
     $db = getDB();
-    session_start();
     $adicional_id = trim($_POST['adicional_id']);
     $arraytid = explode(" ", $adicional_id);
     $primer = $arraytid{0};
+    session_start();
     $_SESSION['$adicional_id'] = $primer;
     switch ($tipo) {
         case 'nombre': $query = "SELECT nombre FROM adicional WHERE adicional_id='$primer'";
@@ -87,15 +87,16 @@ function obtenerAtributoAdicional($tipo) {
                                     <div id="extra" >
                                         <!-- Boton para crear registro usuario-->  
                                         <form role="form"  action="../../controlador/Admin/editarAdicion.php" method="post"  data-ajax="false" onSubmit="return validarCampos();">                                            
+                                            <br><label for="basic">Nombre</label>
                                             <input type="text" class="form-control" id="nombre" name="nombre" value="<?php obtenerAtributoAdicional('nombre') ?>" >
+                                            <br><label for="basic">Descripción</label>
                                             <input type="text" id="descripcion" class="form-control" name="descripcion" value="<?php obtenerAtributoAdicional('descripcion') ?>" />
-                                            <select name="plato_id" class="form-control">
-                                                <option value="<?php obtenerAtributoAdicional('plato') ?>">
-                                                    <?php obtenerAtributoAdicional('plato') ?>
-                                                </option>
+                                            <br><label for="basic">Plato</label>
+                                            <select name="plato_id" class="form-control" >                                                                                               
+                                                <option value="<?php obtenerAtributoAdicional('plato') ?>"><?php obtenerAtributoAdicional('plato') ?></option>
                                                 <?php consultaPlatos() ?>
-                                            </select>    
-
+                                            </select>   
+                                            <br><label for="basic">Costo</label>
                                             <input type="number"  name="costo" id="costo" class="form-control" value="<?php obtenerAtributoAdicional('costo') ?>" >
 
                                             <button type="submit" name="submit" class="btn btn-primary form-control" >Editar Extra</button>
